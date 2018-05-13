@@ -30,4 +30,8 @@ public class Game {
         }
         return true;
     }
+
+    public Character getNextPlayer() {
+        return 'X';
+    }
 }

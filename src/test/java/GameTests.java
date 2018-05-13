@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 public class GameTests {
@@ -27,5 +28,11 @@ public class GameTests {
     public void whenFieldIsOccupiedTheException() {
         game.placeMark(2,2);
         game.placeMark(2,2);
+    }
+
+    @Test
+    public void whenIsNewGameNextPlyerIsX() {
+        Character player = game.getNextPlayer();
+        assertThat('X', is(equalTo(player)));
     }
 }
